@@ -1,5 +1,17 @@
 <p>New User</p>
 
+
+<%= form_tag('/users', method: :post) do %>
+    <%= label_tag 'username', 'Username:' %>
+    <%= text_field_tag 'username' %>
+    <%= label_tag 'email', 'Email:' %>
+    <%= email_field_tag 'email' %>
+    <%= label_tag 'password', 'Password:' %>
+    <%= password_field_tag 'password' %>
+    <%= submit_tag "Submit" %>
+<% end %>
+
+<!--
 <form action="/users" data-turbo=false accept-charset="UTF-8" method="post">
 
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -13,3 +25,5 @@
     <input type="submit" value="Submit">
 
 </form>
+
+-->
