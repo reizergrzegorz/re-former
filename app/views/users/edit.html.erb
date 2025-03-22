@@ -1,4 +1,10 @@
 <%= form_with model: @user do |form| %>
+
+    <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+    </ul>
     
     <%= form.label :username, "Your username here" %>
     <%= form.text_field :username, default: "Prepopulated Value", size: 20 %>
