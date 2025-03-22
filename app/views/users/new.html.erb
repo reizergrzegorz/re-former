@@ -1,6 +1,17 @@
 <p>New User</p>
 
+<%= form_with model: @user do |form| %>
+    
+    <%= form.label :username, "Your username here" %>
+    <%= form.text_field :username, default: "Prepopulated Value", size: 20 %>
+    <%= form.label :email %>
+    <%= form.email_field :email, placeholder: "example@example.com" %>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+    <%= form.submit %>
+<% end %>
 
+<!--
 <%= form_tag('/users', method: :post) do %>
     <%= label_tag 'username', 'Username:' %>
     <%= text_field_tag 'username' %>
@@ -10,9 +21,11 @@
     <%= password_field_tag 'password' %>
     <%= submit_tag "Submit" %>
 <% end %>
+-->
 
 <!--
-<form action="/users" data-turbo=false accept-charset="UTF-8" method="post">
+
+<form method="post" action="/users" accept-charset="UTF-8">
 
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
@@ -23,7 +36,5 @@
     <label for="password">Password:</label>
     <input type="text" name="user[password]">
     <input type="submit" value="Submit">
-
-</form>
-
+</form>  
 -->
